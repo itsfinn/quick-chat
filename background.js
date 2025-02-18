@@ -15,10 +15,10 @@ chrome.omnibox.onInputEntered.addListener((text) => {
     let defaultService = 'deepseek';
 
     // 从存储中获取默认服务商设置
-    chrome.storage.sync.get(['defaultService'], (result) => {
-
-        console.log("result.defaultService: ", result.defaultService)
-        defaultService = result.defaultService || 'deepseek';
+    chrome.storage.sync.get(['config'], (result) => {
+        console.log("result.config: ", result.config)
+        console.log("result.config.defaultService: ", result.config.defaultService)
+        defaultService = result.config.defaultService || 'deepseek';
 
         let service = defaultService;
         let prompt = text;
@@ -74,12 +74,13 @@ chrome.omnibox.onInputEntered.addListener((text) => {
                             func: (service, prompt, SELECTORS) => {
                                 const { input, button } = SELECTORS[service] || {};
                                 if (!input || !button) return;
-
-                                const waitFor = (selector, timeout = 5000) => {
+                                console.log("input: ", input)
+                                console.log("button: ", button)
+                                const waitFor = (selector, timeout = 10000) => {
                                     return new Promise((resolve) => {
                                         const el = document.querySelector(selector);
+                                        console.log("el: ", el)
                                         if (el) return resolve(el);
-
                                         const observer = new MutationObserver(() => {
                                             const el = document.querySelector(selector);
                                             if (el) {
@@ -105,7 +106,7 @@ chrome.omnibox.onInputEntered.addListener((text) => {
                                     if (!inputEl) return;
 
 
-                                    console.log("inputEl")
+                                    console.log("inputEl: ", inputEl)
                                     // 填充输入框内容
                                     inputEl.textContent = prompt; // 修改此处
                                     const inputEvent = new Event('input', { bubbles: true });
