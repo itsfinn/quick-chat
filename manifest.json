@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "Chat Quick Access",
+    "version": "1.0",
+    "icons": {
+        "16": "icons/at.png",
+        "48": "icons/at.png",
+        "128": "icons/at.png"
+    },
+    "permissions": [
+        "omnibox",
+        "scripting",
+        "tabs"
+    ],
+    "host_permissions": [
+        "*://*/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "omnibox": {
+        "keyword": "@deepseek"
+    }
+}
