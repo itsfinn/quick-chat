@@ -1,7 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Chat Quick Access",
+    "name": "Quick Chat To",
     "version": "1.0",
+    "description":"Quick Chat To Deepseek, Doubao, yuanbao",
     "icons": {
         "16": "icons/at.png",
         "48": "icons/at.png",
@@ -10,7 +11,8 @@
     "permissions": [
         "omnibox",
         "scripting",
-        "tabs"
+        "tabs",
+        "storage" 
     ],
     "host_permissions": [
         "*://*/*"
@@ -19,6 +21,7 @@
         "service_worker": "background.js"
     },
     "omnibox": {
-        "keyword": "@deepseek"
-    }
+        "keyword": "@qct"
+    },
+    "options_page": "options.html" 
 }
