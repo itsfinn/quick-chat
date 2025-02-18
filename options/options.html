@@ -1,0 +1,64 @@
+<!-- options.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>扩展设置</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <ul class="menu">
+                <li class="active" data-tab="general">通用</li>
+                <li data-tab="about">关于</li>
+            </ul>
+        </div>
+        
+        <div class="content">
+            <!-- 通用设置 -->
+            <div id="general" class="tab-content active">
+                <h2>服务设置</h2>
+                <div class="form-group">
+                    <label>默认服务：</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="defaultService" value="deepseek"> DeepSeek</label>
+                        <label><input type="radio" name="defaultService" value="yuanbao"> 腾讯元宝</label>
+                        <label><input type="radio" name="defaultService" value="doubao"> 豆包</label>
+                    </div>
+                </div>
+
+                <h3>DeepSeek 设置</h3>
+                <div class="switch-group">
+                    <label><input type="checkbox" id="deepseekDeepThinking"> 启用深度思考</label>
+                    <label><input type="checkbox" id="deepseekWebSearch"> 启用网络搜索</label>
+                </div>
+
+                <h3>腾讯元宝设置</h3>
+                <div class="switch-group">
+                    <label><input type="checkbox" id="yuanbaoDeepThinking"> 启用深度思考</label>
+                    <label><input type="checkbox" id="yuanbaoWebSearch"> 启用网络搜索</label>
+                </div>
+
+                <h3>豆包设置</h3>
+                <div class="switch-group">
+                    <label><input type="checkbox" id="doubaoDeepThinking"> 启用深度思考</label>
+                    <label><input type="checkbox" id="doubaoWebSearch"> 启用网络搜索</label>
+                </div>
+            </div>
+
+            <!-- 关于页面 -->
+            <div id="about" class="tab-content">
+                <h2>关于本扩展</h2>
+                <p>版本: 0.0.1</p>
+                <p>GitHub仓库:
+                    <a href="https://github.com/itsfinn/quick-chat" target="_blank" class="github-link">
+                        https://github.com/itsfinn/quick-chat
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="options.js"></script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
-    "name": "Quick Chat To",
-    "version": "1.0",
+    "name": "Quick Chat",
+    "version": "0.0.1",
     "description":"Quick Chat To Deepseek, Doubao, yuanbao",
     "icons": {
         "16": "icons/at.png",
@@ -23,5 +23,8 @@
     "omnibox": {
         "keyword": "@qct"
     },
-    "options_page": "options.html" 
+    "options_ui": {
+        "page": "options/options.html",
+        "open_in_tab": true
+    }
 }

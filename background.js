@@ -1,3 +1,13 @@
+chrome.runtime.onInstalled.addListener(() => {
+    chrome.storage.sync.set({
+        config: {
+            defaultService: "deepseek",
+            deepseek: { enableDeepThinking: true, enableWebSearch: false },
+            yuanbao: { enableDeepThinking: true, enableWebSearch: true },
+            doubao: { enableDeepThinking: false, enableWebSearch: false }
+        }
+    });
+});
 
 chrome.omnibox.onInputEntered.addListener((text) => {
     console.log("输入的文本是: ", text)
