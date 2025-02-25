@@ -21,7 +21,7 @@
         "service_worker": "background.js"
     },
     "omnibox": {
-        "keyword": "@qct"
+        "keyword": "@qc"
     },
     "options_ui": {
         "page": "options/options.html",

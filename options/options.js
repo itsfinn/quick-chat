@@ -20,13 +20,6 @@ function initOptions() {
             // 设置默认服务
             document.querySelector(`input[value="${config.defaultService}"]`).checked = true;
 
-            // 设置开关状态
-            document.getElementById('deepseekDeepThinking').checked = config.deepseek.enableDeepThinking;
-            document.getElementById('deepseekWebSearch').checked = config.deepseek.enableWebSearch;
-            document.getElementById('yuanbaoDeepThinking').checked = config.yuanbao.enableDeepThinking;
-            document.getElementById('yuanbaoWebSearch').checked = config.yuanbao.enableWebSearch;
-            document.getElementById('doubaoDeepThinking').checked = config.doubao.enableDeepThinking;
-            document.getElementById('doubaoWebSearch').checked = config.doubao.enableWebSearch;
         }
     });
 
@@ -38,19 +31,7 @@ function initOptions() {
 
 function saveConfig() {
     const config = {
-        defaultService: document.querySelector('input[name="defaultService"]:checked').value,
-        deepseek: {
-            enableDeepThinking: document.getElementById('deepseekDeepThinking').checked,
-            enableWebSearch: document.getElementById('deepseekWebSearch').checked
-        },
-        yuanbao: {
-            enableDeepThinking: document.getElementById('yuanbaoDeepThinking').checked,
-            enableWebSearch: document.getElementById('yuanbaoWebSearch').checked
-        },
-        doubao: {
-            enableDeepThinking: document.getElementById('doubaoDeepThinking').checked,
-            enableWebSearch: document.getElementById('doubaoWebSearch').checked
-        }
+        defaultService: document.querySelector('input[name="defaultService"]:checked').value
     };
 
     chrome.storage.sync.set({ config }, () => {
